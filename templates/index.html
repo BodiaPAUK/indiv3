@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users accounting</title>
+</head>
+
+<body>
+    <div style="margin-top: 25px;">
+        <h1 align="center">Users accounting</h1>
+        <input type="button" value="List all users" onclick="window.location.href='/refresh_users'"/>
+        <br><br>
+        {% for line in list %}
+        <p>{{line}}</p>
+        {% endfor %}
+        <br><hr>
+
+        <h2 align="center">Add users</h2>
+        <form action="add_user" method="get">
+            <input type="text" name="name" placeholder="Enter name">
+            <input type="text" name="login" placeholder="Enter login">
+            <input type="text" name="password" placeholder="Enter password">
+            <input type="submit" value="Add user">
+        </form>
+        <br><output type="text" name="add_user_msg">{{add_user_msg}}</output>
+        <br><hr>
+
+        <h2 align="center">Update users</h2>
+        <form action="update_user" method="get">
+            <input type="text" name="id2" placeholder="Enter new name (mandatory">
+            <input type="text" name="name2" placeholder="Enter new name (optional)">
+            <input type="text" name="login2" placeholder="Enter new login (optional)">
+            <input type="text" name="password2" placeholder="Enter new password (optional)">
+            <input type="submit" value="Update user">
+        </form>
+        <br><output type="text" name="update_user_msg">{{update_user_msg}}</output>
+        <br><hr>
+
+        <h2 align="center">Delete users</h2>
+        <form action="delete_user" method="get">
+            <input type="text" name="id3" placeholder="Enter id">
+            <input type="submit" value="Delete user">
+        </form>
+        <br><output type="text" name="delete_user_msg">{{delete_user_msg}}</output>
+    </div>
+</body>
+
+</html>
