@@ -141,6 +141,7 @@ update_user_msg = ''
 delete_user_msg= ''
 
 if __name__ == '__main__':
+    print(pyodbc.version)
     '''connection = open_connection()
     with connection.cursor() as cursor:
         cursor.execute(
